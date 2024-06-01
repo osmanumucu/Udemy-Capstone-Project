@@ -33,6 +33,11 @@ app.post("/edit/:id", (req, res) => {
     res.redirect("/");
 })
 
+app.post('/delete/:id', (req, res) => {
+    posts.splice(req.params.id, 1);
+    res.redirect('/');
+});
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
